@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anandi Water Park | Water Park, Resort, Weddings & Events</title>
+<meta name="description" content="Anandi Water Park – water park, resort stay, wedding venue and event spaces.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0a1a2a;--navy:#123049;--teal:#1d6b75;--gold:#c8a45c;--gold2:#e6c98a;--ivory:#f7f2e8;--mut:#a9b8c4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;background:var(--night);color:var(--ivory);line-height:1.7}
+h1,h2,h3{font-family:'Abril Fatface',Georgia,serif;font-weight:400;line-height:1.1}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92%);margin:auto}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.page{display:none}.page.on{display:block}
+
+/* photo slot */
+.ph{position:relative;overflow:hidden;border-radius:16px;background:linear-gradient(135deg,var(--teal),var(--navy))}
+.ph:nth-child(3n+2){background:linear-gradient(135deg,var(--navy),var(--gold))}
+.ph:nth-child(3n){background:linear-gradient(135deg,#2a8f99,var(--night))}
+.ph img{position:absolute;inset:0;transition:transform .6s}
+.ph:hover img{transform:scale(1.07)}
+
+/* captions */
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 16px 14px;background:linear-gradient(transparent,rgba(6,18,30,.85));color:#fff;font-weight:600;letter-spacing:.02em;z-index:2}
+.ph figcaption small{display:block;font-weight:400;color:var(--gold2);font-size:.85rem}
+/* service options */
+.opt-h{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--gold2);margin:8px 0 8px}
+.opt-s{color:var(--mut);margin-bottom:28px}
+.opts{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:left}
+.opts a{display:block;position:relative;height:260px;min-width:0;border-radius:18px;overflow:hidden;border:1.5px solid rgba(200,164,92,.4);transition:.35s}
+.opts a .ph{position:absolute;inset:0;border-radius:0}
+.opts a figcaption{padding-top:60px;font-family:'Abril Fatface';font-weight:400;font-size:1.25rem}
+.opts a figcaption small{font-family:'Jost';font-size:.82rem}
+.opts a:hover,.opts a:active{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 18px 36px rgba(200,164,92,.3)}
+/* six-photo cards */
+.trio{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;width:min(920px,92%);margin:auto;padding:70px 0 70px}
+.trio .ph{height:440px}
+.trio .ph:nth-child(even){margin-top:46px;margin-bottom:-46px}
+.trio-w{padding-bottom:20px;background:var(--night)}
+/* top bar (inner pages) */
+.bar{position:sticky;top:0;z-index:40;background:rgba(10,26,42,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(200,164,92,.25)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.bar b{font-family:'Abril Fatface';font-size:1.4rem;color:var(--gold2);font-weight:400}
+.btn{display:inline-block;padding:13px 30px;border-radius:99px;border:1.5px solid var(--gold);color:var(--gold2);font:600 1rem 'Jost';background:transparent;cursor:pointer;transition:.3s}
+.btn:hover{background:var(--gold);color:var(--night);transform:translateY(-3px);box-shadow:0 12px 26px rgba(200,164,92,.35)}
+.btn.solid{background:var(--gold);color:var(--night)}
+.btn.solid:hover{background:var(--gold2)}
+
+/* landing */
+.mosaic{display:grid;gap:12px;padding:12px}
+.mosaic.top{grid-template-columns:1.3fr 1fr 1.6fr 1fr 1.3fr;height:300px}
+.mosaic.top .ph:nth-child(even){margin-top:34px}
+.hero{text-align:center;padding:64px 0 56px;background:radial-gradient(ellipse at top,var(--navy),var(--night) 70%)}
+.hero h1{font-size:clamp(3.2rem,11vw,8.4rem);letter-spacing:.01em;color:var(--ivory);text-shadow:0 6px 40px rgba(200,164,92,.25)}
+.hero h1 span{display:block;font-size:.42em;color:var(--gold2);letter-spacing:.32em;margin-top:8px}
+.hero p.tag{color:var(--mut);font-size:1.15rem;margin:22px auto 36px;max-width:560px}
+
+.bio{padding:90px 0;background:var(--ivory);color:var(--night)}
+.bio .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.bio h2{font-size:clamp(2rem,4.5vw,3.4rem);color:var(--navy);margin-bottom:22px}
+.bio p{margin-bottom:16px;font-size:1.06rem;color:#2c4356}
+.bio .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:460px}
+.bio .pair .ph:nth-child(2){margin-top:44px;margin-bottom:-44px}
+
+.about{padding:80px 0;background:var(--navy)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:34px}
+.about h3{font-size:1.6rem;color:var(--gold2);margin-bottom:12px}
+.about p,.about li{color:var(--mut)}.about ul{list-style:none}
+.about li{margin-bottom:8px}
+footer{text-align:center;padding:24px;background:#06121e;color:var(--mut);font-size:.9rem}
+
+/* service pages */
+.svc-head{text-align:center;padding:70px 0 40px;background:radial-gradient(ellipse at top,var(--navy),var(--night) 75%)}
+.svc-head small{color:var(--gold2);letter-spacing:.3em;font-weight:600}
+.svc-head h1{font-size:clamp(2.4rem,7vw,5rem);margin:10px 0 16px}
+.svc-head p{max-width:640px;margin:0 auto 28px;color:var(--mut);font-size:1.08rem}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:14px;padding:30px 0 50px}
+.grid .ph:nth-child(5n+1){grid-column:span 2;grid-row:span 2}
+.grid .ph{cursor:zoom-in;margin:0}
+.bookrow{text-align:center;padding:10px 0 80px}
+.bookrow h3{font-size:1.9rem;margin-bottom:16px}
+
+/* rates */
+.rates-sec{padding:80px 0;background:var(--ivory);color:var(--night);text-align:center}
+.rates-sec h2{font-size:clamp(2rem,4.5vw,3.2rem);color:var(--navy)}
+.rates-sec>.wrap>p{color:#4a6072;margin:8px 0 34px}
+.rgrid{display:grid;grid-template-columns:minmax(0,440px);justify-content:center;gap:18px;text-align:left}
+.rc{background:#fff;border-radius:20px;padding:26px;border:1.5px solid #e4dbc6;display:flex;flex-direction:column;transition:.3s}
+.rc:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(18,48,73,.15);border-color:var(--gold)}
+.rc h3{font-size:1.4rem;color:var(--navy);margin-bottom:12px}
+.rc ul{list-style:none;margin-bottom:20px;flex:1}
+.rc li{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px dashed #d9cfb6;font-size:.96rem}
+.rc li b{color:var(--teal);white-space:nowrap}
+.rc .btn{border-color:var(--navy);color:var(--navy);text-align:center}
+.rc .btn:hover{background:var(--navy);color:var(--gold2)}
+.ratebox{max-width:640px;margin:0 auto 46px;background:var(--navy);border:1px solid rgba(200,164,92,.4);border-radius:20px;padding:28px}
+.ratebox h3{font-size:1.7rem;color:var(--gold2);margin-bottom:10px}
+.ratebox li{list-style:none;display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.18)}
+.ratebox li b{color:var(--gold2)}
+.ratebox small{display:block;margin-top:12px;color:var(--mut)}
+/* modal + lightbox */
+.ov{position:fixed;inset:0;background:rgba(3,10,18,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:18px}
+.ov.on{display:flex}
+#lb img{max-height:90vh;width:auto;max-width:100%;border-radius:12px}
+.box{background:var(--ivory);color:var(--night);border-radius:22px;padding:34px;width:min(440px,100%);position:relative}
+.box h3{color:var(--navy);font-size:1.8rem;margin-bottom:4px}
+.box p{color:#4a6072;margin-bottom:16px;font-size:.95rem}
+.box form{display:grid;gap:12px}
+.box input,.box select{padding:14px 16px;border-radius:12px;border:1.5px solid #d6cdb8;font:inherit;background:#fff}
+.x{position:absolute;top:12px;right:18px;background:none;border:0;font-size:1.8rem;cursor:pointer;color:var(--navy)}
+
+@media(max-width:900px){
+ .mosaic.top{grid-template-columns:repeat(3,1fr);height:170px}.mosaic.top .ph:nth-child(n+4){display:none}
+ .opts{grid-template-columns:repeat(2,1fr)}.opts a{height:190px}.opts a:last-child{grid-column:1/-1;width:calc(50% - 8px);justify-self:center}
+ .trio{gap:12px}.trio .ph{height:230px}.trio .ph:nth-child(even){margin-top:28px;margin-bottom:-28px}
+ .bio .wrap,.about .wrap{grid-template-columns:1fr}
+ .bio .pair{height:340px}
+ .grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ============ LANDING ============ -->
+<div class="page on" id="home">
+ <div class="mosaic top" data-p="top" data-n="5"></div>
+ <section class="hero"><div class="wrap">
+  <h1>Anandi<span>WATER PARK</span></h1>
+  <p class="tag">Where every day feels like a celebration. Splash, stay, celebrate and remember.</p>
+  <h2 class="opt-h">Services</h2>
+  <p class="opt-s">Choose what you are looking for</p>
+  <nav class="opts" id="opts" aria-label="Services"></nav>
+ </div></section>
+
+ <section class="bio"><div class="wrap">
+  <div>
+   <h2>A place made for happy families</h2>
+   <p>Anandi Water Park began with one simple wish: to give families a place where children laugh out loud, parents finally relax, and grandparents smile at the sound of splashing water.</p>
+   <p>Our water park brings together thrilling slides, a wave pool and a gentle kids zone, all watched over by trained lifeguards and kept spotless every single day.</p>
+   <p>When the fun is over, our resort rooms offer a quiet, comfortable stay with fresh food and warm hospitality, just like home.</p>
+   <p>Our lawns and halls are also home to weddings, engagements, birthdays and corporate gatherings, planned with care so that you can enjoy your own celebration.</p>
+   <p>Every guest is treated like family, and every memory made here is one we are proud to be part of. We would love to welcome you next.</p>
+  </div>
+  <div class="pair" data-p="bio" data-n="2" data-caps="Water Park|Resort"></div>
+ </div></section>
+
+ <div class="trio-w"><div class="wrap trio" data-p="bot" data-n="6" data-caps="Wave Pool|Kids Zone|Lazy River|Wedding Lawn|Resort Rooms|Event Hall"></div></div>
+
+ <section class="rates-sec" id="book"><div class="wrap">
+  <h2>Water Park Tickets</h2><p>Simple prices. Book your visit in a minute.</p>
+  <div class="rgrid" id="rgrid"></div>
+ </div></section>
+
+ <section class="about" id="about"><div class="wrap">
+  <div><h3>About Us</h3><p>Anandi Water Park is a family destination combining water rides, resort stays, wedding venues and event spaces in one green, well-kept campus. Our team focuses on safety, cleanliness and friendly service.</p></div>
+  <div><h3>Find Us</h3><ul><li>📍 Anandi Water Park, Your Full Address Here</li><li>City, State - PIN Code</li><li>🕘 Open daily, 10:00 AM to 6:00 PM</li></ul></div>
+  <div><h3>Contact</h3><ul><li>📞 +91 00000 00000</li><li>💬 WhatsApp: +91 00000 00000</li><li>✉️ info@yourdomain.com</li></ul></div>
+ </div></section>
+ <footer>© 2026 Anandi Water Park. All rights reserved.</footer>
+</div>
+
+<!-- ============ SERVICE PAGES (built by script) ============ -->
+<div id="svc"></div>
+
+<!-- booking modal -->
+<div class="ov" id="bk"><div class="box">
+ <button class="x" aria-label="Close" data-close>×</button>
+ <h3>Book your visit</h3><p id="bsvc">Tell us your plan and we will confirm on WhatsApp.</p>
+ <form id="bf">
+  <input name="n" required placeholder="Your name">
+  <input name="p" required type="tel" placeholder="Phone number">
+  <input name="d" required type="date">
+  <input name="g" required type="number" min="1" placeholder="Number of guests">
+  <button class="btn solid" type="submit">Send on WhatsApp</button>
+ </form>
+</div></div>
+<div class="ov" id="lb"><img alt=""></div>
+
+<script>
+// ---- SETTINGS: change these ----
+const WA = "910000000000";            // WhatsApp number with country code, no + or spaces
+const PAGES = {
+ waterpark:{t:"Water Park",pre:"wp",n:12,rates:[["Adult ticket","₹ XXX"],["Child ticket (below 4 ft)","₹ XXX"],["Group (15+ people)","₹ XXX / person"]],d:"Speed slides, a roaring wave pool, a lazy river and a safe kids zone. A full day of splashing for every age, with lifeguards at every ride."},
+ resort:{t:"Resort",pre:"rs",n:12,d:"Comfortable rooms, green lawns and warm hospitality. Stay the night after a day in the water and wake up to a quiet morning."},
+ wedding:{t:"Marriage & Residence",pre:"wd",n:12,d:"Beautiful lawns and halls for weddings, engagements and receptions, with rooms for your guests to stay on the same campus."},
+ event:{t:"Events",pre:"ev",n:12,d:"Birthday parties, corporate outings, school trips and family get-togethers, planned around your group and your budget."},
+ gallery:{t:"Gallery",pre:"gl",n:20,d:"A look at the park, the resort and the celebrations we have hosted."}
+};
+// ---- photo slot: put images in /images, missing files show a colour block ----
+const ph=(s,a,c)=>`<figure class="ph"><img src="images/${s}.jpg" alt="${a}" loading="lazy" onerror="this.remove()">${c?`<figcaption>${c}</figcaption>`:""}</figure>`;
+const fill=(el,pre,n,alt,caps)=>{el.innerHTML=Array.from({length:n},(_,i)=>ph(pre+(i+1),caps?caps[i]:alt,caps?caps[i]:"")).join("")};
+document.querySelectorAll("[data-p]").forEach(e=>fill(e,e.dataset.p,+e.dataset.n,"Anandi Water Park",e.dataset.caps&&e.dataset.caps.split("|")));
+
+// ---- service options on landing ----
+const SUB={waterpark:"Slides & pools",resort:"Rooms & stay",wedding:"Lawns & halls",event:"Parties & groups",gallery:"Photos"};
+document.getElementById("opts").innerHTML=Object.keys(PAGES).map(k=>`<a href="#${k}">${ph(PAGES[k].pre+"1",PAGES[k].t).replace("</figure>",`<figcaption>${PAGES[k].t}<small>${SUB[k]}</small></figcaption></figure>`)}</a>`).join("");
+
+// ---- landing rates ----
+document.getElementById("rgrid").innerHTML=Object.keys(PAGES).filter(k=>PAGES[k].rates).map(k=>{const p=PAGES[k];
+ return `<div class="rc"><h3>${p.t}</h3><ul>${p.rates.map(r=>`<li>${r[0]}<b>${r[1]}</b></li>`).join("")}</ul><button class="btn" data-book="${p.t}">Book now</button></div>`}).join("");
+
+// ---- build the 5 service pages ----
+const svc=document.getElementById("svc");
+for(const k in PAGES){const p=PAGES[k];
+ const s=document.createElement("div");s.className="page";s.id=k;
+ s.innerHTML=`<div class="bar"><div class="wrap"><a href="#home"><b>Anandi Water Park</b></a><a href="#home" class="btn" style="padding:8px 20px">← Home</a></div></div>
+ <div class="svc-head"><div class="wrap"><small>SERVICES</small><h1>${p.t}</h1><p>${p.d}</p>${p.rates?`<button class="btn solid" data-book="${p.t}">Book now</button>`:""}</div></div>
+ <div class="wrap"><div class="grid" data-g="1"></div>
+ ${p.rates?`<div class="ratebox"><h3>Rates</h3><ul>${p.rates.map(r=>`<li>${r[0]}<b>${r[1]}</b></li>`).join("")}</ul><small>Rates may change on weekends and holidays. Call to confirm.</small></div>`:""}
+ ${p.rates?`<div class="bookrow"><h3>Ready for a day at the water park?</h3><button class="btn solid" data-book="${p.t}">Book now</button></div>`:(k==="gallery"?`<div class="bookrow"><h3>Loved what you saw?</h3><button class="btn solid" data-book="Water Park Ticket">Book ticket</button></div>`:`<div class="bookrow"></div>`)}</div>
+ <footer>© 2026 Anandi Water Park. All rights reserved.</footer>`;
+ fill(s.querySelector("[data-g]"),p.pre,p.n,p.t);
+ svc.appendChild(s);
+}
+
+// ---- routing ----
+function route(){const id=(location.hash||"#home").slice(1);
+ document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id===id));
+ if(!document.getElementById(id))document.getElementById("home").classList.add("on");
+ scrollTo(0,0);}
+addEventListener("hashchange",route);route();
+
+// ---- booking + lightbox ----
+const bk=document.getElementById("bk"),lb=document.getElementById("lb");let cur="";
+document.addEventListener("click",e=>{
+ const b=e.target.closest("[data-book]");
+ if(b){cur=b.dataset.book;document.getElementById("bsvc").textContent="Booking for: "+cur;bk.classList.add("on");return}
+ if(e.target.closest("[data-close]")||e.target===bk){bk.classList.remove("on");return}
+ const im=e.target.closest(".grid .ph");
+ if(im&&im.querySelector("img")){lb.querySelector("img").src=im.querySelector("img").src;lb.classList.add("on");return}
+ if(e.target.closest("#lb"))lb.classList.remove("on");
+});
+document.getElementById("bf").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
+ const m=`Hello Anandi Water Park, I want to book: ${cur}%0AName: ${f.get("n")}%0APhone: ${f.get("p")}%0ADate: ${f.get("d")}%0AGuests: ${f.get("g")}`;
+ window.open(`https://wa.me/${WA}?text=${m}`,"_blank");bk.classList.remove("on");e.target.reset();};
+</script>
+</body>
+</html>
+
